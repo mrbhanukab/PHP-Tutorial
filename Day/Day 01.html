@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 01</title>
+</head>
+
+<body>
+    <h1>Setting Up PHP</h1>
+
+    <h2>Summary</h2>
+
+    <blockquote>
+        <ul>
+            <li>PHP is a server-side scripting language used for web development.</li>
+            <li>Setting up PHP involves installing it on your operating system and configuring it with a web server.
+            </li>
+            <li>This guide covers setup instructions for Windows, macOS, Ubuntu, Fedora, and other Linux distributions.
+            </li>
+        </ul>
+    </blockquote>
+
+    <h2>Instructions by Operating System</h2>
+
+    <h3>Windows</h3>
+    <blockquote>
+        <h2>Prerequisites</h2>
+
+        <ul>
+            <li>A Windows computer</li>
+            <li>An internet connection</li>
+            <li>Administrator privileges on your computer</li>
+        </ul>
+
+        <h2>Steps</h2>
+
+        <h3>1. Download PHP</h3>
+
+        <ul>
+            <li>Visit the official PHP website: <a
+                    href="https://www.php.net/downloads.php">https://www.php.net/downloads.php</a></li>
+            <li>Download the latest stable Windows version that's compatible with your system (x86 or x64).</li>
+            <li>Choose the "Thread Safe".</li>
+            <li>Save the downloaded file (e.g., "php-8.2.13-Win32-vs16-x64.zip").</li>
+        </ul>
+
+        <h3>2. Extract PHP</h3>
+
+        <ul>
+            <li>Extract the downloaded ZIP file to a suitable location, such as "C:\php".</li>
+        </ul>
+
+        <h3>3. Add PHP to PATH</h3>
+
+        <ul>
+            <li>Right-click "This PC" or "My Computer" and select "Properties."</li>
+            <li>Click "Advanced system settings."</li>
+            <li>Click "Environment Variables."</li>
+            <li>Under "System variables," find "Path" and click "Edit."</li>
+            <li>Click "New" and add the path to your PHP directory (e.g., "C:\php").</li>
+            <li>Click "OK" on all open dialog boxes to save changes.</li>
+        </ul>
+
+        <h3>4. Test PHP Installation</h3>
+
+        <ul>
+            <li>Open a command prompt (search for "cmd" in the Start menu).</li>
+            <li>Type "php -v" and press Enter.</li>
+            <li>If PHP is installed correctly, you should see the PHP version information.</li>
+        </ul>
+    </blockquote>
+
+    <h3>macOS</h3>
+    <blockquote>
+        <h2>Prerequisites</h2>
+
+        <ul>
+            <li>A macOS computer</li>
+            <li>An internet connection</li>
+            <li>Administrator privileges on your computer</li>
+        </ul>
+
+        <h2>Steps</h2>
+
+        <h3>1. Install Homebrew (if not already installed)</h3>
+
+        <ul>
+            <li>Open Terminal (located in Applications > Utilities).</li>
+            <li>Paste the following command and press Enter:
+                <pre><code>/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"</code></pre>
+            </li>
+            <li>Follow the on-screen instructions to complete the Homebrew installation.</li>
+        </ul>
+
+        <h3>2. Install PHP using Homebrew</h3>
+
+        <ul>
+            <li>In Terminal, type the following command and press Enter:
+                <pre><code>brew install php</code></pre>
+            </li>
+        </ul>
+
+        <h3>3. Test PHP Installation</h3>
+
+        <ul>
+            <li>In Terminal, type <code>php -v</code> and press Enter.</li>
+            <li>If PHP is installed correctly, you should see the PHP version information.</li>
+        </ul>
+    </blockquote>
+
+
+    <h3>Ubuntu</h3>
+    <blockquote>
+        <h2>Prerequisites</h2>
+
+        <ul>
+            <li>An Ubuntu computer</li>
+            <li>An internet connection</li>
+            <li>Administrator privileges (use the "sudo" command)</li>
+        </ul>
+
+        <h2>Steps</h2>
+
+        <h3>1. Update Package Lists</h3>
+
+        <p>To ensure you have the latest package information, open a terminal window (Ctrl+Alt+T) and run:</p>
+        <pre><code>sudo apt update</code></pre>
+
+        <h3>2. Install PHP</h3>
+
+        <p>To install PHP and its common extensions, run:</p>
+        <pre><code>sudo apt install php libapache2-mod-php php-mysql php-curl php-gd php-mbstring php-xml php-xmlrpc php-soap php-intl php-zip</code></pre>
+
+        <h3>3. Verify Installation</h3>
+
+        <p>To check if PHP is installed correctly, run:</p>
+        <pre><code>php -v</code></pre>
+        <p>This should display the PHP version information.</p>
+
+        <h3>4. Restart Apache (if applicable)</h3>
+
+        <p>If you're using Apache, restart it for the changes to take effect:</p>
+        <pre><code>sudo systemctl restart apache2</code></pre>
+
+        <h3>5. Test PHP Functionality</h3>
+
+        <p>Create a simple PHP file named "info.php" within your web root directory (usually "/var/www/html") with the
+            following content:</p>
+        <pre><code>&lt;?php
+phpinfo();
+?&gt;</code></pre>
+        <p>Access this file in your web browser (e.g., http://localhost/info.php). It should display detailed
+            information about your PHP configuration.</p>
+
+    </blockquote>
+
+    <h3>Other Linux Distributions</h3>
+    <blockquote>
+        <ul>
+            <li><b>Fedora:<a href="https://m.youtube.com/watch?v=b4c1DjJOT2M">Install PHP on Fedora Linux 37 (Easy
+                        Guide)</a> by TecMint</li>
+            <li><b>Arch Linux:<a href="https://m.youtube.com/watch?v=nrCuTiIQuOk">Arch Linux - Installing PHP 8.1 and
+                        Apache 2.4 for Web Development</a> by Chris Titus Tech</li>
+            <li><b>Mint:<a href="https://www.youtube.com/watch?v=fXhlSvWSz5U">How to Install PHP on Linux Mint 21 |
+                        XAMPP vs LAMP | Server-Side Scripting</a> by Linux Mint Tutorials</li>
+            <li><b>Other Distros:<a href="https://m.youtube.com/watch?v=6kAr7VRuh9w">How to Install PHP on Any Linux
+                        Distro 2023 | LAMP Stack Tutorial</a> by TecMint</li>
+        </ul>
+    </blockquote>
+</body>
+
+</html>
