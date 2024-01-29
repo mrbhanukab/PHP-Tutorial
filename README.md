@@ -14,6 +14,8 @@ This repository contains the source code for the PHP tutorial.
 
 In this tutorial, you will learn the basics of PHP, specifically tailored for Sri Lankan A/L students.
 
+## Screenshots
+
 ## Getting Started
 
 To get started, simply download this repository.
