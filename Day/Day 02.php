@@ -40,7 +40,7 @@
     comment
     */
 
-    echo "this ", "is ", "an output", "<br>";
+    echo "this ", "is ", "an output";
 
     print "HI!";
     // print "Hi", "This is not gonna work";

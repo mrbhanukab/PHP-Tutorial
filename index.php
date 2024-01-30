@@ -39,33 +39,41 @@
     <h1>PHP Tutorial | Lessons Dashboard</h1>
     <p>In this tutorial, you will learn the basics of PHP, specifically tailored for Sri Lankan A/L students. Click on the lesson you want to continue.</p>
     <ul>
-        <li><a href='/Day/Day 01.html'>Day 01.html</a></li>
-        <?php
-        // Specify the path to the "Day" folder
-        $folderPath = "Day/";
+    <li><a href='/Day/Day 01.html'>Day 01.html</a></li>
+    <?php
+    // Specify the path to the "Day" folder
+    $folderPath = "Day/";
 
-        // Open the directory
-        $dir = opendir($folderPath);
+    // Open the directory
+    $dir = opendir($folderPath);
 
-        // Check if the directory exists
-        if ($dir === false) {
-            echo "Error: Directory not found.";
-            exit;
+    // Check if the directory exists
+    if ($dir === false) {
+        echo "Error: Directory not found.";
+        exit;
+    }
+
+    // Store the PHP files in an array for sorting
+    $phpFiles = [];
+    while (($file = readdir($dir)) !== false) {
+        if (strpos($file, ".php") !== false) {
+            $phpFiles[] = $file;
         }
+    }
 
-        while (($file = readdir($dir)) !== false) {
-            // Check if the file is a PHP file
-            if (strpos($file, ".php") !== false) {
-                // Create the link using the correct path
-                $link = $folderPath . $file;
-                echo "<li><a href='$link'>$file</a></li>";
-            }
-        }
+    // Sort the PHP files numerically
+    natsort($phpFiles);
 
-        // Close the directory
-        closedir($dir);
-        ?>
-    </ul>
+    // Create the links for the sorted PHP files
+    foreach ($phpFiles as $file) {
+        $link = $folderPath . $file;
+        echo "<li><a href='$link'>$file</a></li>";
+    }
+
+    // Close the directory
+    closedir($dir);
+    ?>
+</ul>
 
 </body>
 
